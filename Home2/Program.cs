@@ -6,9 +6,10 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            //Task1();
-            //Task2();
+            Task1();
+            Task2();
             Task3();
+            Task4();
         }
 
         public static void Task1()
@@ -60,8 +61,9 @@ namespace MyApp
             if (number < 0.0 || number > 100.0)
             {
                 Console.WriteLine("The number is not in the range [1 - 100]");
-            } 
-            else if (number <= 14.0) {
+            }
+            else if (number <= 14.0)
+            {
                 Console.WriteLine("The number is in the range [0 - 14]");
             }
             else if (number <= 35.0)
@@ -124,6 +126,21 @@ namespace MyApp
             else
             {
                 Console.WriteLine("The entered word is not in the dictionary.");
+            }
+        }
+
+        public static void Task4()
+        {
+            Console.WriteLine("Please enter an integer");
+            int numberToCheck = int.Parse(Console.ReadLine());
+            
+            if ((numberToCheck % 2) == 0)
+            {
+                Console.WriteLine($"The number {numberToCheck} is even.");
+            }
+            else
+            {
+                Console.WriteLine($"The number {numberToCheck} is odd.");
             }
         }
     }
