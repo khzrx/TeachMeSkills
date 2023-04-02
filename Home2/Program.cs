@@ -7,6 +7,7 @@ namespace MyApp
         static void Main(string[] args)
         {
             Task1();
+            Task2();
         }
 
         public static void Task1()
@@ -48,6 +49,31 @@ namespace MyApp
                 Console.WriteLine("Unknown operation");
             }
         }
-    }
 
+        public static void Task2()
+        {
+            Console.WriteLine("Please enter a number.");
+
+            double number = Convert.ToDouble(Console.ReadLine());
+
+            if (number < 0.0 || number > 100.0)
+            {
+                Console.WriteLine("The number is not in the range [1 - 100]");
+            } else if (number <= 14.0) {
+                Console.WriteLine("The number is in the range [0 - 14]");
+            }
+            else if (number <= 35.0)
+            {
+                Console.WriteLine("The number is in the range [15 - 35]");
+            }
+            else if (number <= 50.0)
+            {
+                Console.WriteLine("The number is in the range [36 - 50]");
+            }
+            else if (number <= 100.0)
+            {
+                Console.WriteLine("The number is in the range [50 - 100]");
+            }
+        }
+    }
 }
