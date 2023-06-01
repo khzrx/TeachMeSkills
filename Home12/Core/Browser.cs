@@ -61,5 +61,27 @@ namespace Home12.Core
         {
             driver.SwitchTo().Alert().Dismiss();
         }
+
+        public void SwitchToFrame(string id)
+        {
+            driver.SwitchTo().Frame(id);
+        }
+
+        public void SwitchToDefault()
+        {
+            driver.SwitchTo().DefaultContent();
+        }
+
+        public object ExecuteScript(string script, object argument = null)
+        {
+            try
+            {
+                return ((IJavaScriptExecutor)driver).ExecuteScript(script, argument);
+            }
+            catch(Exception) 
+            { 
+                return null; 
+            }
+        }
     }
 }
