@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Home12.Core;
+using OpenQA.Selenium;
 
 namespace Home12
 {
@@ -7,14 +8,14 @@ namespace Home12
         [SetUp]
         public void SetUp()
         {
-            driver.FindElement(By.LinkText("Typos")).Click();
+            Browser.Instance.Driver.FindElement(By.LinkText("Typos")).Click();
         }
 
         [Test]
         [Description("Homework. Task 3-f.")]
         public void CheckTextInParagraph()
         {
-            List<IWebElement> paragraphes = driver.FindElements(By.TagName("p")).ToList();
+            List<IWebElement> paragraphes = Browser.Instance.Driver.FindElements(By.TagName("p")).ToList();
             Assert.IsNotEmpty(paragraphes);
 
             string actualTextFirst = paragraphes[0].Text;

@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Home12.Core;
+using OpenQA.Selenium;
 
 namespace Home12
 {
@@ -7,14 +8,14 @@ namespace Home12
         [SetUp]
         public void SetUp()
         {
-            driver.FindElement(By.LinkText("Checkboxes")).Click();
+            Browser.Instance.Driver.FindElement(By.LinkText("Checkboxes")).Click();
         }
 
         [Test]
         [Description("Test from lesson")]
         public void CheckBoxes()
         {
-            List<IWebElement> checkBoxes = driver.FindElements(By.TagName("input")).ToList();
+            List<IWebElement> checkBoxes = Browser.Instance.Driver.FindElements(By.TagName("input")).ToList();
             Assert.IsNotEmpty(checkBoxes);
 
             var checkBoxOne = checkBoxes[0];
@@ -37,7 +38,7 @@ namespace Home12
         [Description("Homework. Task 3-b.")]
         public void CheckAndUncheck()
         {
-            List<IWebElement> checkBoxes = driver.FindElements(By.CssSelector("[type=checkbox]")).ToList();
+            List<IWebElement> checkBoxes = Browser.Instance.Driver.FindElements(By.CssSelector("[type=checkbox]")).ToList();
             Assert.IsNotEmpty(checkBoxes);
 
             var checkBoxOne = checkBoxes[0];

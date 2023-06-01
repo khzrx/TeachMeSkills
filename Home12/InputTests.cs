@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Home12.Core;
+using OpenQA.Selenium;
 
 namespace Home12
 {
@@ -7,7 +8,7 @@ namespace Home12
         [SetUp]
         public void SetUp()
         {
-            driver.FindElement(By.LinkText("Inputs")).Click();
+            Browser.Instance.Driver.FindElement(By.LinkText("Inputs")).Click();
 
         }
 
@@ -15,7 +16,7 @@ namespace Home12
         [Description("Test from lesson")]
         public void EnterNumbers()
         {
-            var input = driver.FindElement(By.TagName("input"));
+            var input = Browser.Instance.Driver.FindElement(By.TagName("input"));
 
             input.SendKeys("100");
             input.Clear();
@@ -33,7 +34,7 @@ namespace Home12
         [Description("Homework. Task 3-d.")]
         public void LettersAndArrows()
         {
-            var input = driver.FindElement(By.TagName("input"));
+            var input = Browser.Instance.Driver.FindElement(By.TagName("input"));
 
             input.SendKeys("a" + Keys.ArrowUp);
             Assert.AreEqual("1", input.GetAttribute("value"));
