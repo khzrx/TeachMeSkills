@@ -19,4 +19,10 @@
     <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="113.0.5672.6300" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TestData\testFileToUpload.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
