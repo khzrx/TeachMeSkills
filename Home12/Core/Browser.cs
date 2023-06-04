@@ -35,7 +35,9 @@ namespace Home12.Core
             }
             else
             {
-                driver = new ChromeDriver();
+                ChromeOptions options = new ChromeOptions();
+                options.AddUserProfilePreference("download.default_directory", @DirectoryHelper.GetTestDataFolderPath());
+                driver = new ChromeDriver(options);
             }
 
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
