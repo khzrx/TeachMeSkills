@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 
 namespace Home12
 {
-    internal class ContextTests
+    internal class ContextTests : BaseTest
     {
         [Test]
         public void ContextTest()
