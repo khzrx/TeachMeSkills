@@ -14,17 +14,14 @@ namespace SauceDemo.Test
                 PostalCode = "ABC123"
             };
 
-            var inventoryPage = new LoginPage(driver)
+            var checkoutPage = new LoginPage(driver)
                 .OpenPage()
                 .LoginAsStandartUser()
                 .AddBackpack()
                 .GoToCartPage()
-                .GoToCheckoutPage();
-
-            inventoryPage.FillUserData(user);
-
-            var checkoutPage = new CheckoutPage(driver);
-            checkoutPage.FinishCheckout();
+                .GoToCheckoutPage()
+                .FillUserData(user)
+                .FinishCheckout();
 
             Assert.AreEqual("Thank you for your order!", checkoutPage.GetThankYouText());
         }
