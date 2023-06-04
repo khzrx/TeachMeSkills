@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Interactions;
 
 namespace Home12.Core
 {
@@ -62,6 +63,11 @@ namespace Home12.Core
             driver.SwitchTo().Alert().Dismiss();
         }
 
+        public string GetAllertText()
+        {
+            return driver.SwitchTo().Alert().Text;
+        }
+
         public void SwitchToFrame(string id)
         {
             driver.SwitchTo().Frame(id);
@@ -70,6 +76,15 @@ namespace Home12.Core
         public void SwitchToDefault()
         {
             driver.SwitchTo().DefaultContent();
+        }
+
+        public void ContextClickToElement(IWebElement element)
+        {
+            new Actions(driver)
+                .MoveToElement(element)
+                .ContextClick()
+                .Build()
+                .Perform();
         }
 
         public object ExecuteScript(string script, object argument = null)
