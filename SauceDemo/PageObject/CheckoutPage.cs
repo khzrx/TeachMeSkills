@@ -23,12 +23,13 @@ namespace SauceDemo.PageObject
             throw new NotImplementedException();
         }
 
-        public void FillUserData(UserModel user)
+        public CheckoutPage FillUserData(UserModel user)
         {
             driver.FindElement(FirstNameInput).SendKeys(user.FirstName);
             driver.FindElement(LastNameInput).SendKeys(user.LastName);
             driver.FindElement(PostalCodeInput).SendKeys(user.PostalCode);
             driver.FindElement(ContinueButton).Click();
+            return this;
         }
 
         public bool VerifyErrorMessage()
